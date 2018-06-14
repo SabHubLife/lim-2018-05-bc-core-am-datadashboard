@@ -2,15 +2,37 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Data Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <script src="main.js"></script>
-  <script src="data.js"></script>
-  <div id=users></div>
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+    <div id="showusers"></div>
+    <table id="tableuser" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>LOCALE</th>
+                <th>NAME</th>
+                <th>ROLE</th>
+                <th>signupCohort</th>
+                <th>TIMEZONE</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>LOCALE</th>
+                <th>NAME</th>
+                <th>ROLE</th>
+                <th>signupCohort</th>
+                <th>TIMEZONE</th>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 
 </html>
