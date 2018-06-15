@@ -1,0 +1,21 @@
+body {
+    background-image: url('../img/fondo1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+table {
+    border: 0.1em solid;
+    width: 100%;
+    align-self: center;
+}
+
+td {
+    width: 30%;
+    height: 0.5em;
+}
+
+div {
+    margin-top: 15em;
+}

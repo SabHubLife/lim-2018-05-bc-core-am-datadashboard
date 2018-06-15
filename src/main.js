@@ -1,13 +1,13 @@
 /*
-const callBack= ()=> {
+const callData= ()=> {
     let users = JSON.parse(req.responseText);
     document.getElementById("showusers").innerHTML = `El arreglo tiene ${users.length} objetos`;
 };
 
-const req = (URL, callBack)=>{
+const req = (URL, callData)=>{
     const req= new XMLHttpRequest();
     req.open('GET',URL,true);
-    req.onload = callBack;
+    req.onload = callData;
     req.send();
 };
 
@@ -34,20 +34,30 @@ document.getElementById("showusers").innerHTML = `El arreglo tiene ${req.length}
 */
 
 
-const myRequest1 = new XMLHttpRequest();
-myRequest1.open('GET', '../data/cohorts/lim-2018-03-pre-core-pw/users.json');
-myRequest1.onload = function() {
-    let users = JSON.parse(myRequest1.responseText);
-   
-    document.getElementById("showusers").innerHTML = `El arreglo Users tiene ${users.length} objetos`;
-    //document.getElementById('user').innerHTML = JSON.stringify(users);
-    console.log(users);
+displayArrayUsers = (student) => {
+    return `
+    <table>
+    <tr>
+    <td>${student.name}</td>
+    <td>${student.signupCohort}</td>
+    <td>${student.timezone}</td>
+    </tr>  
+    </table>
+    `;
 };
 
-document.getElementById('conect').addEventListener('click', () => {
-    document.getElementById("showusers").innerHTML = `El arreglo Users tiene ${users.length} objetos`;
-});
-
+const myRequest1 = new XMLHttpRequest();
+myRequest1.open('GET', '../data/cohorts/lim-2018-03-pre-core-pw/users.json');
+myRequest1.onload = () => {
+    const users = JSON.parse(myRequest1.responseText);
+    console.log(users);
+    document.getElementById('conect').addEventListener('click', () => {
+        document.getElementById("showusers").innerHTML = `
+        <h1>El arreglo Users tiene ${users.length} objetos</h1>
+        <div>${users.map(displayArrayUsers).join('')}</div>
+        `;
+    });
+};
 let myRequest2 = new XMLHttpRequest();
 myRequest2.open('GET', '../data/cohorts/lim-2018-03-pre-core-pw/progress.json');
 myRequest2.onload = function() {
@@ -67,11 +77,3 @@ myRequest3.onload = function() {
 myRequest1.send();
 myRequest2.send();
 myRequest3.send();
-
-let users = myRequest1;
-let progress = myRequest2;
-let cohorts = myRequest3;
-
-window.onload = () => {
-    document.getElementById("showusers").innerHTML = `El arreglo tiene ${myRequest1} objetos`;
-};
