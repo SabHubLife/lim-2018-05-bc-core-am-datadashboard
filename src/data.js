@@ -3,7 +3,7 @@ window.computeUsersStats = {
     progress: { progress },
     courses: [cohorts],
 };
-
+/*
 //window.sortUsers(users, orderBy, orderDirection);
 //window.filterUsers(users, search);
 //window.processCohortData(options);
@@ -20,4 +20,5 @@ console.log(computeUsersStats.progress);
 computeUsersStats.courses.forEach((cohorts) => {
     console.log(cohorts);
 });
->>>>>>> 214e92c252bd422e455fa12df430dd7f456e44e8
+<<<<<<< HEAD
+*/
