@@ -5,9 +5,6 @@ myRequest1.onload = function() {
     //document.getElementById('user').innerHTML = JSON.stringify(users);
     console.log(users);
 };
-<<<<<<< HEAD
-myRequest.send();
-=======
 
 let myRequest2 = new XMLHttpRequest();
 myRequest2.open('GET', '../data/cohorts/lim-2018-03-pre-core-pw/progress.json');
@@ -36,4 +33,3 @@ let cohorts = myRequest3;
 window.onload = () => {
     document.getElementById("showusers").innerHTML = `${myRequest1.onload}`
 };
->>>>>>> 214e92c252bd422e455fa12df430dd7f456e44e8
