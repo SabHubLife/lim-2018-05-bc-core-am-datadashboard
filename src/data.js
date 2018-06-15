@@ -1,4 +1,3 @@
-
 window.computeUsersStats = {
     users: [users],
     progress: { progress },
@@ -13,10 +12,13 @@ computeUsersStats.users.forEach((users) => {
     console.log(users);
 });
 
+<<<<<<< HEAD
+=======
 console.log(computeUsersStats.progress);
 
 
 computeUsersStats.courses.forEach((cohorts) => {
     console.log(cohorts);
 });
+<<<<<<< HEAD
 */

@@ -58,6 +58,7 @@ myRequest1.onload = () => {
         `;
     });
 };
+
 let myRequest2 = new XMLHttpRequest();
 myRequest2.open('GET', '../data/cohorts/lim-2018-03-pre-core-pw/progress.json');
 myRequest2.onload = function() {
