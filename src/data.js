@@ -1,9 +1,10 @@
 
 window.computeUsersStats = {
-    users: [users],
-    progress: { progress },
-    courses: [cohorts],
+    users: [],
+    progress: { },
+    courses: [],
 };
+
 /*
 //window.sortUsers(users, orderBy, orderDirection);
 //window.filterUsers(users, search);
@@ -20,3 +21,6 @@ computeUsersStats.courses.forEach((cohorts) => {
     console.log(cohorts);
 });
 */
+
+
+console.log(getUsers)
