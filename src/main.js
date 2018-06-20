@@ -73,6 +73,12 @@ const search = () => {};
 
 
 
+<<<<<<< HEAD
 console.log(users);
 console.log(progress);
 console.log(courses);
+=======
+myRequest1.send();
+myRequest2.send();
+myRequest3.send();
+>>>>>>> 14719e8e6c864875a56b1c2c4c1943d26e36db0f
