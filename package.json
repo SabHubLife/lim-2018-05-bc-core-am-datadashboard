@@ -16,6 +16,7 @@
     "eslint": "^4.19.1",
     "htmlhint": "^0.9.13",
     "http-server": "^0.11.1",
+    "laravel-mix": "^1.4.2",
     "mocha": "^5.2.0",
     "node": "^10.4.1",
     "nodejs": "0.0.0",

@@ -1,26 +1,16 @@
+window.computeUsersStats = (users, progress, courses) => {
 
-window.computeUsersStats = {
-    users: [],
-    progress: { },
-    courses: [],
 };
 
-/*
-//window.sortUsers(users, orderBy, orderDirection);
-//window.filterUsers(users, search);
-//window.processCohortData(options);
-
-computeUsersStats.users.forEach((users) => {
-    console.log(users);
-});
-
-console.log(computeUsersStats.progress);
+window.sortUsers = (users, orderBy, orderDirection) => {
 
 
-computeUsersStats.courses.forEach((cohorts) => {
-    console.log(cohorts);
-});
-*/
+};
+window.filterUsers = (users, search) => {
 
 
-console.log(getUsers)
+};
+window.processCohortData = (options) => {
+
+
+};
