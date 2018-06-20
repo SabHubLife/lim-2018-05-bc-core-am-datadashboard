@@ -61,6 +61,7 @@ const getCohorts = getJSON('../data/cohorts.json', (err, json) => {
         <div>${json.map(displayArrayUsers).join('')}</div>
         `;
     });
+<<<<<<< HEAD
 });
 
 const users = getUsers;
@@ -71,6 +72,17 @@ const orderBy = () => {};
 const orderDirection = () => {};
 const search = () => {};
 
+=======
+};
+
+let myRequest2 = new XMLHttpRequest();
+myRequest2.open('GET', '../data/cohorts/lim-2018-03-pre-core-pw/progress.json');
+myRequest2.onload = function() {
+    let progress = JSON.parse(myRequest2.responseText);
+    //document.getElementById('user').innerHTML = JSON.stringify(progress);
+    console.log(progress);
+};
+>>>>>>> 4660f03feb876bed737c3dbbc22452afbe2c7bb7
 
 
 console.log(users);
