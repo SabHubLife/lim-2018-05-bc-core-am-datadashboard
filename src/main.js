@@ -1,4 +1,4 @@
-const getData = (url,callback) => {
+const getData = (url, callback) => {
     const request = new XMLHttpRequest();
     request.onreadystatechange = () => {
         if (request.readyState == 4 && request.status == 200) {
@@ -11,8 +11,8 @@ const getData = (url,callback) => {
 };
 
 
-const getUsers=()=>{
-    getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json',callback=(data)=>{
+const getUsers = () => {
+    getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
             document.getElementById('test').innerHTML = `
             <h1>El arreglo Users tiene ${data.length} objetos</h1>
@@ -24,15 +24,15 @@ const getUsers=()=>{
     });
 };
 
-const getProgress=()=>{
-    getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json',callback=(data)=>{
+const getProgress = () => {
+    getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
         console.log(data);
         return data;
     });
 };
 
-const getCohorts=()=>{
-    getData('../data/cohorts.json',callback=(data)=>{
+const getCohorts = () => {
+    getData('../data/cohorts.json', callback = (data) => {
         console.log(data);
         return data;
     });
