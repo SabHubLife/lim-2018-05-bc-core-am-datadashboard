@@ -1,8 +1,23 @@
 body {
-    background-image: url('../img/fondo1.png');
+    background-image: url('../img/Laboratoria_CMYK_logo-04.png');
+    background-size: 20%;
+    background-position: center;
+    background-position-y: 2%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: rgb(251, 251, 251);
+}
+
+.btn-group button {
+    background-color: rgb(255, 229, 33);
+    border: 0.1em solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 1em 2em;
+    cursor: context-menu;
+    width: 20%;
+}
+
+.btn-group button:hover {
+    background-color: rgb(86, 248, 154);
 }
 
 table {
@@ -18,4 +33,32 @@ td {
 
 div {
     margin-top: 15em;
+}
+
+.menu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 2em;
+    background-color: rgb(255, 229, 33);
+    text-decoration: none;
+    color: #191C26;
+}
+
+.menu a:hover {
+    background-color: rgb(86, 248, 154);
+}
+
+.menu ul li ul {
+    display: none;
+}
+
+.menu ul li a:hover+ul,
+.menu ul li ul:hover {
+    display: block;
 }
