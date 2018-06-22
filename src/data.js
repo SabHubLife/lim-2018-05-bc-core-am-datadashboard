@@ -4,21 +4,3 @@ window.computeUsersStats = (users, progress, courses) => {
     }
 
 };
-
-window.sortUsers = (users, orderBy, orderDirection) => {
-
-};
-window.filterUsers = (users, search) => {
-
-};
-
-
-console.log(computeUsersStats.progress);
-
-
-computeUsersStats.courses.forEach((cohorts) => {
-            console.log(cohorts);
-
-            window.processCohortData = (options) => {
-
-            };
