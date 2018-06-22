@@ -10,7 +10,15 @@ const getData = (url, callback) => {
     request.send();
 };
 
-
+const getUsers = () => {
+    getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
+        document.getElementById('conect users').addEventListener('click', () => {
+            computeUsersStats(data, null, null);
+            return data;
+        });
+    });
+};
+/*
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
@@ -23,23 +31,31 @@ const getUsers = () => {
         return data;
     });
 };
-
+*/
 const getProgress = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
-        console.log(data);
-        return data;
+        document.getElementById('conect users').addEventListener('click', () => {
+            computeUsersStats(null, data, null);
+            return data;
+
+        });
     });
 };
 
-const getCohorts = () => {
+const getCohorts = (call) => {
     getData('../data/cohorts.json', callback = (data) => {
-        console.log(data);
-        return data;
+        document.getElementById('conect users').addEventListener('click', () => {
+            computeUsersStats(null, null, data);
+            call(data);
+            return data;
+        });
     });
 };
+call = () => { return 'hola' };
 getUsers();
 getProgress();
-getCohorts();
+const courses = getCohorts();
+console.log(courses)
 
 displayArrayUsers = (student) => {
     return `
