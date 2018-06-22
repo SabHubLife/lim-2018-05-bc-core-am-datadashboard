@@ -3,6 +3,7 @@ window.computeUsersStats = (users, progress, courses) => {
         console.log(user.name);
     }
 
+<<<<<<< HEAD
 };
 
 window.sortUsers = (users, orderBy, orderDirection) => {
@@ -24,3 +25,6 @@ computeUsersStats.courses.forEach(cohorts) => {
             };
 };
 */
+=======
+};
+>>>>>>> a93a3e858ae737ad321b8ecd826d376456708227

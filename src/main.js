@@ -26,6 +26,12 @@ const getUsers = () => {
 
 const getProgress = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
+        document.getElementById('conect progress').addEventListener('click', () => {
+            document.getElementById('test').innerHTML = `
+            <h1>El arreglo Progress tiene ${data.length} objetos</h1>
+            <div>${data.map(displayArrayProgress).join('')}</div>
+            `;
+        });
         console.log(data);
         return data;
     });
@@ -33,6 +39,12 @@ const getProgress = () => {
 
 const getCohorts = () => {
     getData('../data/cohorts.json', callback = (data) => {
+        document.getElementById('conect cohorts').addEventListener('click', () => {
+            document.getElementById('test').innerHTML = `
+            <h1>El arreglo Cohorts tiene ${data.length} objetos</h1>
+            <div>${data.map(displayArrayCohorts).join('')}</div>
+            `;
+        });
         console.log(data);
         return data;
     });
@@ -52,6 +64,31 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
+
+displayArrayProgress = (student) => {
+    return `
+        <table>
+        <tr>
+        <td>${student.name}</td>
+        <td>${student.start}</td>
+        <td>${student.end}</td>
+        </tr>  
+        </table>
+        `;
+};
+
+displayArrayCohorts = (student) => {
+    return `
+        <table>
+        <tr>
+        <td>${student.id}</td>
+        <td>${student.start}</td>
+        <td>${student.end}</td>
+        </tr>  
+        </table>
+        `;
+};
+
 
 
 
