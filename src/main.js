@@ -1,3 +1,4 @@
+
 const getData = (url, callback) => {
     const request = new XMLHttpRequest();
     request.onreadystatechange = () => {
@@ -13,11 +14,38 @@ const getData = (url, callback) => {
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
-            computeUsersStats(data, null, null);
+            computeUsersStats(data,null,null);
             return data;
         });
     });
 };
+
+const getProgress = () => {
+    getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
+        document.getElementById('conect users').addEventListener('click', () => {
+            computeUsersStats(null, data, null);
+            return data;
+
+        });
+    });
+};
+
+
+
+const getCohorts = () => {
+    getData('../data/cohorts.json', callback = (data) => {
+        document.getElementById('conect users').addEventListener('click', () => {
+            processCohortData(data);
+        });
+    });
+};
+
+
+getUsers();
+getProgress();
+const courses = getCohorts();
+
+
 /*
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
@@ -32,31 +60,7 @@ const getUsers = () => {
     });
 };
 */
-const getProgress = () => {
-    getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
-        document.getElementById('conect users').addEventListener('click', () => {
-            computeUsersStats(null, data, null);
-            return data;
-
-        });
-    });
-};
-
-const getCohorts = (call) => {
-    getData('../data/cohorts.json', callback = (data) => {
-        document.getElementById('conect users').addEventListener('click', () => {
-            computeUsersStats(null, null, data);
-            call(data);
-            return data;
-        });
-    });
-};
-call = () => { return 'hola' };
-getUsers();
-getProgress();
-const courses = getCohorts();
-console.log(courses)
-
+/*
 displayArrayUsers = (student) => {
     return `
         <table>
@@ -69,7 +73,7 @@ displayArrayUsers = (student) => {
         `;
 };
 
-
+*/
 
 //getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json',callback);
 //getData('../data/cohorts.json',callback);
