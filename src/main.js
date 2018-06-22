@@ -157,17 +157,13 @@ const orderBy = () => {};
 const orderDirection = () => {};
 const search = () => {};
 
-<<<<<<< HEAD
 
 
 myRequest1.send();
 myRequest2.send();
 myRequest3.send();
-<<<<<<< HEAD
-=======
->>>>>>> 14719e8e6c864875a56b1c2c4c1943d26e36db0f
-=======
+
 const keyProgress = Object.keys(getProgress);
 console.log(keyProgress);
 */
->>>>>>> 19583a24ea4987e5881972108861dbb992147a7f
+

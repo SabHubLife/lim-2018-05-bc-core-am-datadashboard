@@ -15,10 +15,12 @@ window.filterUsers = (users, search) => {
 
 console.log(computeUsersStats.progress);
 
-
-computeUsersStats.courses.forEach((cohorts) => {
+/*
+computeUsersStats.courses.forEach(cohorts) => {
             console.log(cohorts);
 
-            window.processCohortData = (options) => {
+            processCohortData = (options) => {
 
             };
+};
+*/
