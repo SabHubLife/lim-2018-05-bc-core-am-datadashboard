@@ -88,6 +88,9 @@ displayArrayCohorts = (student) => {
         </table>
         `;
 };
+let dataInfo;
+// hoy 26 junio- se agrega evento :
+document.getElementById ( 'dataInfoButon').addEventListener("click", dataInfo);
 
 
 

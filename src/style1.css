@@ -1,41 +1,63 @@
 body {
     background-image: url('../img/Laboratoria_CMYK_logo-04.png');
-    background-size: 20%;
+    background-size: 27.5%;
     background-position: center;
     background-position-y: 2%;
     background-repeat: no-repeat;
     background-color: rgb(251, 251, 251);
+    background-attachment: fixed;
+    
 }
 
-.btn-group button {
-    background-color: rgb(255, 229, 33);
+#CMannager{
+    float: left;
+    padding-bottom: 0.4em;
+}
+.btn-group button { 
+    float: left;
+    border-left: 5% solid  #a8a5a7dc;
+    border-top: 5%  solid #a8a5a7dc;
+    border-radius:3%;
+    align-content: flex-end;
+    font-family: Roboto;
+    font-style: normal;
     border: 0.1em solid rgb(0, 0, 0);
     color: rgb(0, 0, 0);
-    padding: 1em 2em;
+    padding: 1.5em 5.5em;
     cursor: context-menu;
-    width: 20%;
 }
 
 .btn-group button:hover {
-    background-color: rgb(86, 248, 154);
+    background: #ffffff;
+    color:rgb(2, 1, 1);
+    box-shadow: rgb(230, 208, 48);
+    background-color:rgb(255, 229, 33);
+    
 }
 
 table {
     border: 0.1em solid;
     width: 100%;
-    align-self: center;
+    float: left;
+    background-color: rgb(255, 229, 33);
+    border: 0.3em solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
-
+#test{
+    float:left;
+    font-size: 1em;
+}
 td {
     width: 30%;
     height: 0.5em;
 }
 
 div {
-    margin-top: 15em;
+    margin-top: 6em;
 }
 
 .menu ul {
+    float: left;
     display: flex;
     padding: 0;
     margin: 0;
@@ -56,6 +78,7 @@ div {
 
 .menu ul li ul {
     display: none;
+    
 }
 
 .menu ul li a:hover+ul,
