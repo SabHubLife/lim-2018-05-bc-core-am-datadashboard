@@ -1,4 +1,46 @@
+let progress = {};
+let users = [];
+let cohorts = {};
 
+const urlP = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
+const urlU = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+const urlC = '../data/cohorts.json';
+
+fetch(urlP).then((resp) => {
+    if (resp.status === 200) {
+        return resp.json();
+    } else {
+        console.log('ocurrió un error')
+    }
+}).then((respP) => {
+    progress = respP;
+    return fetch(urlU)
+}).then((resp) => {
+    if (resp.status === 200) {
+        return resp.json();
+    } else {
+        console.log('ocurrió un error')
+    }
+}).then((respU) => {
+    users = respU;
+    return fetch(urlC)
+}).then((resp) => {
+    if (resp.status === 200) {
+        return resp.json();
+    } else {
+        console.log('ocurrió un error')
+    }
+}).then((respC) => {
+    cohorts = respC;
+    computeUsersStats(users, progress, cohorts);
+})
+
+
+
+
+
+
+/*
 const getData = (url, callback) => {
     const request = new XMLHttpRequest();
     request.onreadystatechange = () => {
@@ -48,6 +90,8 @@ getCohorts();
 
 
 
+const courses = getCohorts();
+*/
 
 
 /*
