@@ -9,8 +9,8 @@ window.filterUsers = (users, search) => {
 
 };
 window.processCohortData = (options) => {
-    for (option of options){
-        
-console.log(option.id)}
+    for (option of options){   
+      console.log(option.id)  
+    };
 
 };

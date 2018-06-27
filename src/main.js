@@ -34,7 +34,7 @@ const getProgress = () => {
 
 const getCohorts = () => {
     getData('../data/cohorts.json', callback = (data) => {
-        document.getElementById('conect users').addEventListener('click', () => {
+        document.getElementById('conect cohorts').addEventListener('click', () => {
             processCohortData(data);
         });
     });
@@ -43,7 +43,11 @@ const getCohorts = () => {
 
 getUsers();
 getProgress();
-const courses = getCohorts();
+getCohorts();
+
+
+
+
 
 
 /*
