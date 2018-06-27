@@ -1,12 +1,33 @@
 window.computeUsersStats = (users, progress, courses) => {
-    const container = document.getElementById('test');
+    const arrayProgress = Array.from(Object.values(progress))
+    for (let i = 0; i < arrayProgress.length; i++) {
+        const element = arrayProgress[i].values
+        console.log(element)
+    }
+    users.forEach(element => {
+        element.stats=''
+    });
+
+
+   
+    /*
+        users.forEach(element => {
+            element.stats=arrayProgress.intro
+            console.log(arrayProgress[0])
+            });
+   console.log(users)  
+   */   
+  // console.log(Object.values(progress))
+   /* const container = document.getElementById('test');
     for (const user in users) {
         const list = document.createElement('p');
         list.innerHTML = `${users[user].name}`;
         container.appendChild(list);
     }
-
+*/
 };
+
+
 
 window.sortUsers = (users, orderBy, orderDirection) => {
 
@@ -32,4 +53,3 @@ const search = () => {
     })
     return newUsers;
 }
-console.log(search())
