@@ -1,18 +1,21 @@
 window.computeUsersStats = (users, progress, courses) => {
     const arrayProgress = Object.values(progress)
     for (let i = 0; i < arrayProgress.length; i++) {
-        const element = arrayProgress[i]
-        console.table(element)
+        //console.table(arrayProgress[i])
+        //console.table(Object.getOwnPropertyNames(progress))
+        console.table(Object.getOwnPropertyNames(progress))
     }
     users.forEach(element => {
         element.stats = 'hello'
-        console.table(element)
+            // console.table(element)
     });
     courses.forEach(element => {
         element.stats = 'hello'
-        console.table(element)
+            // console.table(element)
     });
+    if (Object.getOwnPropertyNames(progress).values(progress)) {
 
+    }
 };
 /*
         users.forEach(element => {
