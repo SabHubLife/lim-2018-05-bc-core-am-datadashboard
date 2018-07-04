@@ -1,3 +1,22 @@
+/* const listHeadQuarters = document.querySelectorAll('#city');
+for (const liHQ of listHeadQuarters) {
+    liHQ.addEventListener('click', event => { console.log(event.target) })
+} */
+
+
+
+const listHeadQuarters = document.querySelector('#headquarters');
+const mainSection = document.getElementById('cohorts');
+listHeadQuarters.addEventListener('click', event => {
+    mainSection.innerHTML = `
+    <div>
+        <p>${event.target.textContent}</p>
+    </div>
+    `
+});
+
+
+
 let progress = {};
 let users = [];
 let cohorts = {};
@@ -23,6 +42,7 @@ fetch(urlP).then((resp) => {
     }
 }).then((respU) => {
     users = respU;
+
     return fetch(urlC)
 }).then((resp) => {
     if (resp.status === 200) {
@@ -33,6 +53,8 @@ fetch(urlP).then((resp) => {
 }).then((respC) => {
     cohorts = respC;
     computeUsersStats(users, progress, cohorts);
+
+
 })
 
 
