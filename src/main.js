@@ -14,29 +14,35 @@ const getData = (str, url, callback) => {
         callback(str, response);
       }
     }
-  })
+  });
   xhr.send();
-}
+};
+
 
 const showCohorts = (city, dataCohorts) => {
+
+  
+  
   const cohortByCity = dataCohorts.filter(cohort => {
     return cohort.id.indexOf(city) !== -1;
   })
   for (const cohort of cohortByCity) {
     mainSection.innerHTML += `
   <div>
-  <div id='${cohort.id}'>${cohort.id}</div>
+  <div id='listcohorts'>${cohort.id}</div>
   </div>
   `
   }
 
+
+
 };
 
 listVenues.addEventListener('click', event => {
+     // AL FIN , en una línea -Se limpia todo cuando el usuario dé click.
+    mainSection.innerHTML='';
   getData(event.target.id, '../data/cohorts.json', showCohorts);
 });
-
-
 
 /* listVenues.addEventListener('click', event => {
   mainSection.innerHTML = `
@@ -162,10 +168,6 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
-<<<<<<< HEAD
-=======
-
->>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 */
 
 //getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json',callback);
