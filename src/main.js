@@ -105,6 +105,10 @@ const getData = (url, callback) => {
     request.send();
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd52003cd1a61141f46f0261a6fbaaf4f232bb77
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
@@ -277,6 +281,19 @@ const orderBy = () => {};
 const orderDirection = () => {};
 const search = () => {};
 
+<<<<<<< HEAD
+
+
+<<<<<<< HEAD
+console.log(users);
+console.log(progress);
+console.log(courses);
+=======
+myRequest1.send();
+myRequest2.send();
+myRequest3.send();
+>>>>>>> 14719e8e6c864875a56b1c2c4c1943d26e36db0f
+=======
 const keyProgress = Object.keys(getProgress);
 console.log(keyProgress);
 */

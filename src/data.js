@@ -18,6 +18,7 @@ window.computeUsersStats = (users, progress, courses) => {
     });
     if (Object.getOwnPropertyNames(progress).values(progress)) {
 
+<<<<<<< HEAD
     }
 };
 /*
@@ -61,3 +62,6 @@ const search = () => {
     })
     return newUsers;
 }
+=======
+};
+>>>>>>> cd52003cd1a61141f46f0261a6fbaaf4f232bb77
