@@ -8,12 +8,20 @@ body {
     background-attachment: fixed;
     
 }
-
-#CMannager{
-    float: left;
-    padding-bottom: 0.4em;
+.left-menu {
+    margin-top: 6em;
 }
-.btn-group button { 
+.select{
+        padding: 1em;
+        background-color: rgb(255, 229, 33);
+        text-decoration: none;
+        color: #191C26;
+        margin-top: -5.5em;
+        float: left;
+        right: 8em;
+}
+
+/* .btn-group button { 
     float: left;
     border-left: 5% solid  #a8a5a7dc;
     border-top: 5%  solid #a8a5a7dc;
@@ -34,7 +42,7 @@ body {
     background-color:rgb(255, 229, 33);
     
 }
-
+ */
 table {
     border: 0.1em solid;
     width: 100%;
@@ -50,38 +58,4 @@ table {
 td {
     width: 30%;
     height: 0.5em;
-}
-
-div {
-    margin-top: 6em;
-}
-
-.menu ul {
-    float: left;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.menu a {
-    display: block;
-    padding: 2em;
-    background-color: rgb(255, 229, 33);
-    text-decoration: none;
-    color: #191C26;
-}
-
-.menu a:hover {
-    background-color: rgb(86, 248, 154);
-}
-
-.menu ul li ul {
-    display: none;
-    
-}
-
-.menu ul li a:hover+ul,
-.menu ul li ul:hover {
-    display: block;
 }

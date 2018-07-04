@@ -1,9 +1,57 @@
 window.computeUsersStats = (users, progress, courses) => {
-    // for (const user of users) { console.log(user.name);}
-    let file = users.map(userWhitStats => {
+    const exercisesTotal=(progress,courses) =>{
+      const count = 0;
+      courses.map(intro=>{
+      const unitsProgress= Object
+
+
+      });
+      const cont = 0;
+      courses.map(a => {
+      const unitsProgress= Object.keys(progress[a].units);
+       unitsProgress.map(nameUnits =>{
+      //const arrayNameUnits= object.keys(progress[a].units[nameUnits].parts);
+      const arrayNameUnits= unitsProgress.nameUnits;
+        arrayNameUnits.map(nameParts ={
+      const objecttExercises = progress[a].units[nameUnits].parts[nameParts];
+          if (objecttExercises.hasOwnProperty('exercises')){
+            const nameExercises = objecttExercises.exercises ;
+              cont += object.keys(nameExercises).length;
+          }
+        });
+       });
+      });return cont
+    } 
+  } 
+
+
+    /*const completenessOfExcercises=(progress,courses) =>{
+      const cont = 0;
+      courses.map(a => {
+      const unitsProgress= object.keys(progress[a].units);
+       unitsProgress.map(nameUnits =>{
+        const arrayNameUnits= object.keys(progress[a].units[nameUnits].parts);
+        arrayNameUnits.map(nameParts ={
+        const objecttExercises = progress[a].units[nameUnits].parts[nameParts];
+          if (objecttExercises.hasOwnProperty('exercises'){
+          const exercisesFinished = object.keys(objectExercises.exercises);
+          exercisesFinished.map(completenessOfExcercises =>{
+            const completenessOfExcercises=objecttExercises.exercises[completenessOfExcercises].completed;
+            if(exercises ==1){
+              cont +
+            }
+          )}
+          )}
+        });
+       });
+      });return cont*/
+
+
+
+    const file = users.map(userWhitStats => {
           try {
             userWhitStats.stats = {
-              percent: coursesAverage(progress[userWhitStats.id], courses),
+              percent: coursesAverage(progress[userWhitStats.id],intro.percent),
               exercises: {
                 total: exercisesTotal(progress[userWhitStats.id], courses),
                 completed: completenessOfExcercises(progress[userWhitStats.id], courses),
@@ -22,44 +70,136 @@ window.computeUsersStats = (users, progress, courses) => {
                 scoreAvg: scoreAverage(progress[userWhitStats.id], courses) / completenessOfQuizzes(progress[userWhitStats.id], courses) * 100,
               }
             }
-            return userWhitStats;
           } catch (error) {
             return {};
-          }
-        
-          })
+            }
+    })
+    return file;
+    console.log (file);
+/* --------------------------------------------------------------------------------------------
+let listUsuarioComputerUser = [];
+
+window.computeUsersStats = (users, progress, courses) => {
+    users.map(usuario => {
+        const UsuarioNuevo = NuevoUsuarioStats(usuario, progress[usuario.id], courses);
+        listUsuarioComputerUser.push(UsuarioNuevo);
+    });
+    return listUsuarioComputerUser;    
+}
+//console.log(listUsuarioComputerUser) 
+
+const NuevoUsuarioStats = (usuario, progress, courses) => {
+    let nameUser = usuario.name;
+    let usersWithStats = {}
+    usersWithStats.stats = {
+        percent: computerUserPercent(progress, courses),
+        exercises: computerExercises(progress, courses),
+        reads: computerUsersRead(progress, courses),
+        quizzes: computerUserQuizz(progress, courses),
+    }
+    usersWithStats.name = nameUser;
+    return usersWithStats;
+}
+const computerUserPercent = (progress, courses) => {
+    try {
+        return progress[courses].percent;
+    } catch (error) {
+        return 0;
+    }
+}
+const computerExercises = (progress, courses) => {
+    let cont = 0;
+    let contComplet = 0;
+    try {
+        courses.map((curso) => {
+            const valorUnits = Object.keys(progress[curso].units);
+            
+            valorUnits.map((nombreUnits) => {
+             
+                const valorParts = Object.keys(progress[curso].units[nombreUnits].parts);
+               
+                valorParts.map((nombreParts) => {
+                    const valorExcercises = progress[curso].units[nombreUnits].parts[nombreParts];
+                   
+                    if (valorExcercises.hasOwnProperty('exercises')) {
+                        const nombreExercises = valorExcercises.exercises;
+                        cont += Object.keys(nombreExercises).length;
+                        
+                        const valorCompletado = Object.keys(valorExcercises.exercises);
+                        //console.log(valorCompletado) 
+                        valorCompletado.map((nombreExercises) => {
+                            //console.log (nombreExercises)
+                            const valorCompleted = progress[curso].units[nombreUnits].parts[nombreParts].exercises[nombreExercises].completed;
+                            //console.log (valorCompleted)
+                            if (valorCompleted == 1) {
+                                contComplet += valorCompleted;
+                            }
+                        });
+                    }
+                });
 
 
-          const courses = ["intro"];
-          const dataInfo = () => {
+            });
+        });
+    } catch (error) {
+        let exercises = {
+            total: 0,
+            completed: 0,
+            percent: 0,
+        }
+
+        return exercises;
+
+    }
+
+    let exercises = {
+        total: cont,
+        completed: contComplet,
+        percent: (contComplet / cont) * 100,
+    }
+    return exercises;
+
+
+};
+
+
+
+
+*/
+
+
+
+
+    
+         // const courses = ["intro"];
+        //  const dataInfo = () => {
               //se utiliza fetch - más actualizado  , llamadas sucesivas
-              fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json', {
-                  method: 'GET'
-                })
-                .then((response) => {
-                  if (response.status == 200) {
-                    return response.json();
-                  } else {
-                    console.log('Error')
-                  }
+             // fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json', {     method: 'GET'
+              //  })
+               // .then((response) => {
+                 // if (response.status == 200) {
+                   // return response.json();
+                 // } else {
+                 //   console.log('Error')
+                 // }
                   //}).then((jsonResponse) => {
                   // data1= =  jsonResponse;
                   // return fetch(('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-                })
-                .then((users) => {
-                  fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', {
-                      method: 'GET'
-                    })
-                    .then((response) => {
-                      if (response.status !== 200) {
-                        console.log('Error')
-                      }
-                      return response.json();
-                    })
-                    .then((progress) => {
-                      computeUsersStats(users, progress.courses);
-                    })
-                })
+            //    })
+              //  .then((users) => {
+                //  fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', {
+                  //    method: 'GET'
+                   // })
+                   // .then((response) => {
+                    //  if (response.status !== 200) {
+                      //  console.log('Error')
+                     // }
+                     // return response.json();
+                   // })
+                   // .then((progress) => {
+                     // computeUsersStats(users, progress.courses);
+                   // })
+              //  })
 
 
 
@@ -77,12 +217,11 @@ window.computeUsersStats = (users, progress, courses) => {
 
               //  console.log(computeUsersStats.progress);
 
-              /*
-              computeUsersStats.courses.forEach(cohorts) => {
-                          console.log(cohorts);
+              
+              //computeUsersStats.courses.forEach(cohorts) => {
+                //          console.log(cohorts);
 
-                          processCohortData = (options) => {
+                  //        processCohortData = (options) => {
 
-                          };
-              };
-              */
+                    //      };
+             // }; 

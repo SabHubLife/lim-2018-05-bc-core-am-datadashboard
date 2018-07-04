@@ -1,3 +1,109 @@
+
+fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(response) {
+    console.log(response)
+  });
+
+
+
+
+const cohortsUrl = '../data/cohorts.json';
+const progressUrl = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
+const userXhr= new XMLHttpRequest();
+const cohortsXhr=new XMLHttpRequest();
+const progressXhr=new XMLHttpRequest();
+const listVenues = document.querySelector('#venues');
+const mainSection = document.getElementById('cohorts');
+
+
+const getData = (str, url, callback) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.addEventListener('load', event => {
+    if (event.target.readyState === 4) {
+      if (event.target.status !== 200) {
+        return console.error(new Error(`HTTP error: ${event.target.status}`))
+      } else {
+        const response = JSON.parse(event.target.responseText);
+        callback(str, response);
+      }
+    }
+  })
+  xhr.send();
+}
+
+const showCohorts = (city, dataCohorts) => {
+  const cohortByCity = dataCohorts.filter(cohort => {
+    return cohort.id.indexOf(city) !== -1;
+  })
+  for (const cohort of cohortByCity) {
+    mainSection.innerHTML += `
+  <div>
+  <div id='${cohort.id}'>${cohort.id}</div>
+  </div>
+  `
+  }
+
+};
+
+listVenues.addEventListener('click', event => {
+  getData(event.target.id, '../data/cohorts.json', showCohorts);
+});
+
+
+
+/* listVenues.addEventListener('click', event => {
+  mainSection.innerHTML = `
+    <div>
+        <p>${event.target.textContent}</p>
+    </div>
+    `
+});
+ */
+/*
+let progress = {};
+let users = [];
+let cohorts = {};
+const urlP = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
+const urlU = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+const urlC = '../data/cohorts.json';
+fetch(urlP).then((resp) => {
+    if (resp.status === 200) {
+        return resp.json();
+    } else {
+        console.log('ocurrió un error')
+    }
+}).then((respP) => {
+    progress = respP;
+    return fetch(urlU)
+}).then((resp) => {
+    if (resp.status === 200) {
+        return resp.json();
+    } else {
+        console.log('ocurrió un error')
+    }
+}).then((respU) => {
+    users = respU;
+    return fetch(urlC)
+}).then((resp) => {
+    if (resp.status === 200) {
+        return resp.json();
+    } else {
+        console.log('ocurrió un error')
+    }
+}).then((respC) => {
+    cohorts = respC;
+    computeUsersStats(users, progress, cohorts);
+})
+*/
+
+
+
+
+/*
 const getData = (url, callback) => {
     const request = new XMLHttpRequest();
     request.onreadystatechange = () => {
@@ -9,8 +115,37 @@ const getData = (url, callback) => {
     request.open('GET', url, true);
     request.send();
 };
+const getUsers = () => {
+    getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
+        document.getElementById('conect users').addEventListener('click', () => {
+            computeUsersStats(data,null,null);
+            return data;
+        });
+    });
+};
+const getProgress = () => {
+    getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
+        document.getElementById('conect users').addEventListener('click', () => {
+            computeUsersStats(null, data, null);
+            return data;
+        });
+    });
+};
+const getCohorts = () => {
+    getData('../data/cohorts.json', callback = (data) => {
+        document.getElementById('conect cohorts').addEventListener('click', () => {
+            processCohortData(data);
+        });
+    });
+};
+getUsers();
+getProgress();
+getCohorts();
+const courses = getCohorts();
+*/
 
 
+/*
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
@@ -23,36 +158,8 @@ const getUsers = () => {
         return data;
     });
 };
-
-const getProgress = () => {
-    getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
-        document.getElementById('conect progress').addEventListener('click', () => {
-            document.getElementById('test').innerHTML = `
-            <h1>El arreglo Progress tiene ${data.length} objetos</h1>
-            <div>${data.map(displayArrayProgress).join('')}</div>
-            `;
-        });
-        console.log(data);
-        return data;
-    });
-};
-
-const getCohorts = () => {
-    getData('../data/cohorts.json', callback = (data) => {
-        document.getElementById('conect cohorts').addEventListener('click', () => {
-            document.getElementById('test').innerHTML = `
-            <h1>El arreglo Cohorts tiene ${data.length} objetos</h1>
-            <div>${data.map(displayArrayCohorts).join('')}</div>
-            `;
-        });
-        console.log(data);
-        return data;
-    });
-};
-getUsers();
-getProgress();
-getCohorts();
-
+*/
+/*
 displayArrayUsers = (student) => {
     return `
         <table>
@@ -64,44 +171,13 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
-
-displayArrayProgress = (student) => {
-    return `
-        <table>
-        <tr>
-        <td>${student.name}</td>
-        <td>${student.start}</td>
-        <td>${student.end}</td>
-        </tr>  
-        </table>
-        `;
-};
-
-displayArrayCohorts = (student) => {
-    return `
-        <table>
-        <tr>
-        <td>${student.id}</td>
-        <td>${student.start}</td>
-        <td>${student.end}</td>
-        </tr>  
-        </table>
-        `;
-};
-let dataInfo;
-// hoy 26 junio- se agrega evento :
-document.getElementById ( 'dataInfoButon').addEventListener("click", dataInfo);
-
-
-
+*/
 
 //getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json',callback);
 //getData('../data/cohorts.json',callback);
 
 /*
-
 //segunda parte
-
 displayArrayCohorts = (student) => {
     return `
         <table>
@@ -113,7 +189,6 @@ displayArrayCohorts = (student) => {
         </table>
         `;
 };
-
 displayArrayUsers = (student) => {
     return `
         <table>
@@ -125,10 +200,8 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
-
 const getJSON = (url, callback) => {
     const request = new XMLHttpRequest();
-
     request.onload = _ => {
         if (request.readyState === 4) {
             if (request.status !== 200) {
@@ -141,15 +214,10 @@ const getJSON = (url, callback) => {
             }
         }
     };
-
     request.open('GET', url, true);
     request.send(null);
     return request;
 };
-
-
-
-
 const getUsers = getJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json', (err, json) => {
     if (err) {
         return console.error(err);
@@ -162,8 +230,6 @@ const getUsers = getJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json', (
         `;
     });
 });
-
-
 const getCohorts = getJSON('../data/cohorts.json', (err, json) => {
     if (err) {
         return console.error(err);
@@ -176,7 +242,6 @@ const getCohorts = getJSON('../data/cohorts.json', (err, json) => {
         `;
     });
 });
-
 const getProgress = getJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', (err, json) => {
     if (err) {
         return console.error(err);
@@ -196,14 +261,17 @@ const options = {};
 const orderBy = () => {};
 const orderDirection = () => {};
 const search = () => {};
-
-
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+console.log(users);
+console.log(progress);
+console.log(courses);
+=======
 myRequest1.send();
 myRequest2.send();
 myRequest3.send();
-
+>>>>>>> 14719e8e6c864875a56b1c2c4c1943d26e36db0f
+=======
 const keyProgress = Object.keys(getProgress);
 console.log(keyProgress);
 */
-
