@@ -1,10 +1,3 @@
-/* const listHeadQuarters = document.querySelectorAll('#city');
-for (const liHQ of listHeadQuarters) {
-    liHQ.addEventListener('click', event => { console.log(event.target) })
-} */
-
-
-
 const listHeadQuarters = document.querySelector('#headquarters');
 const mainSection = document.getElementById('cohorts');
 listHeadQuarters.addEventListener('click', event => {
