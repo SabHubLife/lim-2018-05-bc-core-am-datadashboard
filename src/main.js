@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
   .then(function(response) {
@@ -15,6 +16,8 @@ const progressUrl = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
 const userXhr= new XMLHttpRequest();
 const cohortsXhr=new XMLHttpRequest();
 const progressXhr=new XMLHttpRequest();
+=======
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 const listVenues = document.querySelector('#venues');
 const mainSection = document.getElementById('cohorts');
 
@@ -67,9 +70,17 @@ listVenues.addEventListener('click', event => {
 let progress = {};
 let users = [];
 let cohorts = {};
+<<<<<<< HEAD
 const urlP = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
 const urlU = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 const urlC = '../data/cohorts.json';
+=======
+
+const urlP = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
+const urlU = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+const urlC = '../data/cohorts.json';
+
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 fetch(urlP).then((resp) => {
     if (resp.status === 200) {
         return resp.json();
@@ -87,6 +98,10 @@ fetch(urlP).then((resp) => {
     }
 }).then((respU) => {
     users = respU;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
     return fetch(urlC)
 }).then((resp) => {
     if (resp.status === 200) {
@@ -97,7 +112,14 @@ fetch(urlP).then((resp) => {
 }).then((respC) => {
     cohorts = respC;
     computeUsersStats(users, progress, cohorts);
+<<<<<<< HEAD
 })
+=======
+
+
+})
+
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 */
 
 
@@ -115,6 +137,14 @@ const getData = (url, callback) => {
     request.open('GET', url, true);
     request.send();
 };
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd52003cd1a61141f46f0261a6fbaaf4f232bb77
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
@@ -128,9 +158,19 @@ const getProgress = () => {
         document.getElementById('conect users').addEventListener('click', () => {
             computeUsersStats(null, data, null);
             return data;
+<<<<<<< HEAD
         });
     });
 };
+=======
+
+        });
+    });
+};
+
+
+
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 const getCohorts = () => {
     getData('../data/cohorts.json', callback = (data) => {
         document.getElementById('conect cohorts').addEventListener('click', () => {
@@ -138,6 +178,8 @@ const getCohorts = () => {
         });
     });
 };
+
+
 getUsers();
 getProgress();
 getCohorts();
@@ -145,6 +187,15 @@ const courses = getCohorts();
 */
 
 
+<<<<<<< HEAD
+=======
+
+
+const courses = getCohorts();
+*/
+
+
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 /*
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
@@ -171,6 +222,10 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 */
 
 //getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json',callback);
