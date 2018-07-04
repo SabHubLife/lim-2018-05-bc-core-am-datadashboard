@@ -5,31 +5,38 @@
     <meta charset="utf-8">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="row">
-            <div class="col-md-6" id="cohorts">
+        <nav id="sidebar-wrapper">
+            <div class="sidebar-header p-5">
+                <figure>
+                    <img class="img-fluid" src="../img/Laboratoria_RGB_logo-11.png" alt="L">
+                </figure>
             </div>
-            <nav class="col-md-6" id="sidebar">
-                <div class="sidebar-header w-5 p-5">
-                    <figure><img class="img-fluid" src="../img/Laboratoria_RGB_logo-11.png" alt=""></figure>
+            <ul class="list-group text-center" id="venues">
+                <h3 class="text-white">Sede</h3>
+                <li class="list-group-item border rounded-circle border-dark" id=cdmx>CDMX</li>
+                <li class="list-group-item border rounded-circle border-dark" id=lim>Lima</li>
+                <li class="list-group-item border rounded-circle border-dark" id=scl>Santigo</li>
+                <li class="list-group-item border rounded-circle border-dark" id=spl>Sao Paulo</li>
+            </ul>
+            <div class="sidebar-footer">
+                <figure>
+                    <img class="img-fluid" src="../img/Laboratoria_RGB_logo-3.png" alt="L">
+                </figure>
+            </div>
+        </nav>
+        <div id="page-content-wrapper">
+            <div class="row">
+                <div class="col" id="cohorts">
                 </div>
-                <ul class="list-group text-center" id="headquarters">
-                    <h3 class="text-white">Sede</h3>
-                    <li class="list-group-item border rounded-circle border-dark" id=city>CDMX</li>
-                    <li class="list-group-item border rounded-circle border-dark" id=city>Lima</li>
-                    <li class="list-group-item border rounded-circle border-dark" id=city>Santigo</li>
-                    <li class="list-group-item border rounded-circle border-dark" id=city>Sao Paulo</li>
-                </ul>
-                <div class="sidebar-footer">
-                    <figure><img class="img-fluid" src="../img/Laboratoria_RGB_logo-3.png" alt=""></figure>
-                </div>
-            </nav>
+            </div>
         </div>
+
     </div>
     <script src="main.js"></script>
     <script src="data.js"></script>

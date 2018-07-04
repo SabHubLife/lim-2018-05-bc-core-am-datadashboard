@@ -1,15 +1,52 @@
-const listHeadQuarters = document.querySelector('#headquarters');
+const listVenues = document.querySelector('#venues');
 const mainSection = document.getElementById('cohorts');
-listHeadQuarters.addEventListener('click', event => {
-    mainSection.innerHTML = `
+
+
+const getData = (str, url, callback) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.addEventListener('load', event => {
+    if (event.target.readyState === 4) {
+      if (event.target.status !== 200) {
+        return console.error(new Error(`HTTP error: ${event.target.status}`))
+      } else {
+        const response = JSON.parse(event.target.responseText);
+        callback(str, response);
+      }
+    }
+  })
+  xhr.send();
+}
+
+const showCohorts = (city, dataCohorts) => {
+  const cohortByCity = dataCohorts.filter(cohort => {
+    return cohort.id.indexOf(city) !== -1;
+  })
+  for (const cohort of cohortByCity) {
+    mainSection.innerHTML += `
+  <div>
+  <div id='${cohort.id}'>${cohort.id}</div>
+  </div>
+  `
+  }
+
+};
+
+listVenues.addEventListener('click', event => {
+  getData(event.target.id, '../data/cohorts.json', showCohorts);
+});
+
+
+
+/* listVenues.addEventListener('click', event => {
+  mainSection.innerHTML = `
     <div>
         <p>${event.target.textContent}</p>
     </div>
     `
 });
-
-
-
+ */
+/*
 let progress = {};
 let users = [];
 let cohorts = {};
@@ -50,7 +87,7 @@ fetch(urlP).then((resp) => {
 
 })
 
-
+*/
 
 
 
