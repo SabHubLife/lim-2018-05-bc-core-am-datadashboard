@@ -19,39 +19,23 @@ const getData = (str, url, callback) => {
 };
 
 
-const showCohorts = (city, dataCohorts) => {
-
-  
-  
+const showCohorts = (city, dataCohorts) =>{  
   const cohortByCity = dataCohorts.filter(cohort => {
     return cohort.id.indexOf(city) !== -1;
   })
-  for (const cohort of cohortByCity) {
-    mainSection.innerHTML += `
-  <div>
-  <div id='listcohorts'>${cohort.id}</div>
-  </div>
-  `
-  }
-
-
-
+  cohortByCity.forEach(cohort => {
+      mainSection.innerHTML+=
+      `<option>${cohort.id}</option>`
+  });
 };
 
 listVenues.addEventListener('click', event => {
-     // AL FIN , en una línea -Se limpia todo cuando el usuario dé click.
     mainSection.innerHTML='';
   getData(event.target.id, '../data/cohorts.json', showCohorts);
 });
 
-/* listVenues.addEventListener('click', event => {
-  mainSection.innerHTML = `
-    <div>
-        <p>${event.target.textContent}</p>
-    </div>
-    `
-});
- */
+mainSection
+
 /*
 let progress = {};
 let users = [];

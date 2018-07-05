@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Data Dashboard</title>
-    <!--link rel="stylesheet" href="style.css"-->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
 </head>
@@ -18,13 +18,13 @@
                         <img class="img-fluid" src="../img/Laboratoria_RGB_logo-11.png" alt="L">
                     </figure>
                 </div>
-                <ul class="list-group text-center" id="venues">
+                <div class="list-group text-center" id="venues">
                     <h3 class="text-white">Sede</h3>
-                    <li class="list-group-item border rounded-circle border-dark" id=cdmx>CDMX</li>
-                    <li class="list-group-item border rounded-circle border-dark" id=lim>Lima</li>
-                    <li class="list-group-item border rounded-circle border-dark" id=scl>Santigo</li>
-                    <li class="list-group-item border rounded-circle border-dark" id=spl>Sao Paulo</li>
-                </ul>
+                    <a href="#" class="list-group-item list-group-item-action rounded-circle" id=cdmx>CDMX</a>
+                    <a href="#" class="list-group-item list-group-item-action rounded-circle" id=lim>Lima</a>
+                    <a href="#" class="list-group-item list-group-item-action rounded-circle" id=scl>Santigo</a>
+                    <a href="#" class="list-group-item list-group-item-action rounded-circle" id=spl>Sao Paulo</a>
+                    </div>
                 <div class="sidebar-footer">
                     <figure>
                         <img class="img-fluid" src="../img/Laboratoria_RGB_logo-3.png" alt="L">
@@ -33,8 +33,8 @@
             </nav>
         </div>
         <div id="page-content-wrapper col-sm-9">
-            <div class="col" id="cohorts">
-            </div>
+            <select id="cohorts">
+            </select>
         </div>
     </div>
     <script src="main.js"></script>
