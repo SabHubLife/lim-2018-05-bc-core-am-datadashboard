@@ -14,29 +14,35 @@ const getData = (str, url, callback) => {
         callback(str, response);
       }
     }
-  })
+  });
   xhr.send();
-}
+};
+
 
 const showCohorts = (city, dataCohorts) => {
+
+  
+  
   const cohortByCity = dataCohorts.filter(cohort => {
     return cohort.id.indexOf(city) !== -1;
   })
   for (const cohort of cohortByCity) {
     mainSection.innerHTML += `
   <div>
-  <div id='${cohort.id}'>${cohort.id}</div>
+  <div id='listcohorts'>${cohort.id}</div>
   </div>
   `
   }
 
+
+
 };
 
 listVenues.addEventListener('click', event => {
+     // AL FIN , en una línea -Se limpia todo cuando el usuario dé click.
+    mainSection.innerHTML='';
   getData(event.target.id, '../data/cohorts.json', showCohorts);
 });
-
-
 
 /* listVenues.addEventListener('click', event => {
   mainSection.innerHTML = `
@@ -72,7 +78,6 @@ fetch(urlP).then((resp) => {
     }
 }).then((respU) => {
     users = respU;
-
     return fetch(urlC)
 }).then((resp) => {
     if (resp.status === 200) {
@@ -87,11 +92,6 @@ fetch(urlP).then((resp) => {
 
 })
 
-*/
-
-
-
-
 /*
 const getData = (url, callback) => {
     const request = new XMLHttpRequest();
@@ -105,10 +105,8 @@ const getData = (url, callback) => {
     request.send();
 };
 
-<<<<<<< HEAD
-=======
-
 >>>>>>> cd52003cd1a61141f46f0261a6fbaaf4f232bb77
+>>>>>>> 6283c890b422bc62d6aa532933388640d912a598
 const getUsers = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/users.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
@@ -117,7 +115,6 @@ const getUsers = () => {
         });
     });
 };
-
 const getProgress = () => {
     getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', callback = (data) => {
         document.getElementById('conect users').addEventListener('click', () => {
@@ -142,13 +139,8 @@ const getCohorts = () => {
 getUsers();
 getProgress();
 getCohorts();
-
-
-
-
 const courses = getCohorts();
 */
-
 
 /*
 const getUsers = () => {
@@ -176,16 +168,13 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
-
 */
 
 //getData('../data/cohorts/lim-2018-03-pre-core-pw/progress.json',callback);
 //getData('../data/cohorts.json',callback);
 
 /*
-
 //segunda parte
-
 displayArrayCohorts = (student) => {
     return `
         <table>
@@ -197,7 +186,6 @@ displayArrayCohorts = (student) => {
         </table>
         `;
 };
-
 displayArrayUsers = (student) => {
     return `
         <table>
@@ -209,10 +197,8 @@ displayArrayUsers = (student) => {
         </table>
         `;
 };
-
 const getJSON = (url, callback) => {
     const request = new XMLHttpRequest();
-
     request.onload = _ => {
         if (request.readyState === 4) {
             if (request.status !== 200) {
@@ -225,15 +211,10 @@ const getJSON = (url, callback) => {
             }
         }
     };
-
     request.open('GET', url, true);
     request.send(null);
     return request;
 };
-
-
-
-
 const getUsers = getJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json', (err, json) => {
     if (err) {
         return console.error(err);
@@ -246,8 +227,6 @@ const getUsers = getJSON('../data/cohorts/lim-2018-03-pre-core-pw/users.json', (
         `;
     });
 });
-
-
 const getCohorts = getJSON('../data/cohorts.json', (err, json) => {
     if (err) {
         return console.error(err);
@@ -260,7 +239,6 @@ const getCohorts = getJSON('../data/cohorts.json', (err, json) => {
         `;
     });
 });
-
 const getProgress = getJSON('../data/cohorts/lim-2018-03-pre-core-pw/progress.json', (err, json) => {
     if (err) {
         return console.error(err);
@@ -280,10 +258,7 @@ const options = {};
 const orderBy = () => {};
 const orderDirection = () => {};
 const search = () => {};
-
 <<<<<<< HEAD
-
-
 <<<<<<< HEAD
 console.log(users);
 console.log(progress);
