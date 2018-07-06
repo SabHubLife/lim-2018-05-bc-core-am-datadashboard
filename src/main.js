@@ -24,8 +24,9 @@ const showCohorts = (city, dataCohorts) =>{
     return cohort.id.indexOf(city) !== -1;
   })
   cohortByCity.forEach(cohort => {
-      mainSection.innerHTML+=
-      `<option>${cohort.id}</option>`
+      mainSection.innerHTML=`<select id='${cohort}'></select>`;
+      const cohortList=document.getElementById(`${cohort}`);
+      cohortList.innerHTML +=`<option>${cohort.id}</option>`;
   });
 };
 
@@ -34,7 +35,7 @@ listVenues.addEventListener('click', event => {
   getData(event.target.id, '../data/cohorts.json', showCohorts);
 });
 
-mainSection
+
 
 /*
 let progress = {};
