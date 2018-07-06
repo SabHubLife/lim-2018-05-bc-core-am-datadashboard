@@ -1,14 +1,21 @@
-body, html, .row {
+body,
+html,
+.row {
     height: 100%;
 }
+
 .wrapper {
     background-color: black;
     height: 100%;
 }
-#cdmx,#lim,#scl,#spl {
-    background-color: rgb(255, 229, 33);
 
+#cdmx,
+#lim,
+#scl,
+#spl {
+    background-color: rgb(255, 229, 33);
 }
+
 .sidebar-footer {
     background-color: rgb(255, 255, 255);
     padding: 5%;
