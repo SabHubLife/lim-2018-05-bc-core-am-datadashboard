@@ -2,6 +2,7 @@ const listVenues = document.querySelector('#venues');
 const mainSection = document.getElementById('cohorts');
 
 
+
 const getData = (str, url, callback) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -35,11 +36,29 @@ const showCohorts = (city, dataCohorts) => {
     cohortByCity.forEach(cohort => {
         const options = document.getElementById('select')
         options.innerHTML +=
+<<<<<<< HEAD
             `<option id='${cohort.id}'>${cohort.id}</option>`
+=======
+            `<option id"${cohort.id}"=>${cohort.id}</option>`
+>>>>>>> 3f45fc7e6a2dfd0b8d8bbd0e041bed4d95627e8b
     });
 };
+
+const showProgress = (cohortName,dataProgress)=>{
+
+};
+
+const showUsers = (cohortName, dataUsers)=>{
+
+};
+
 
 listVenues.addEventListener('click', event => {
     mainSection.innerHTML = '';
     getData(event.target.id, '../data/cohorts.json', showCohorts);
+});
+
+mainSection.addEventListener('change', event =>{
+    debugger
+    getData(event.target.id, '../data/cohorts/lim-2018-03-pre-core-pw/users.json', showUsers);
 });
