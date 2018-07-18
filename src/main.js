@@ -18,16 +18,24 @@ const getData = (str, url, callback) => {
     xhr.send();
 };
 
+const showUsers = (user, dataUsers) => {
+    /*const cohortID = document.getElementById('${cohort.id}')
+                      cohortID.addEventListener('change', event => {
+                          console.log(event);
+                          getData(event.target.id, '../dat/cohorts/lim-2018-03-pre-core-pw/users.json', showUsers)
+
+                      })*/
+}
 
 const showCohorts = (city, dataCohorts) => {
-    mainSection.innerHTML = `<select class="form-control" id="select"></select>`
+    mainSection.innerHTML = `<select class="form-control" id='select'></select>`
     const cohortByCity = dataCohorts.filter(cohort => {
         return cohort.id.indexOf(city) !== -1;
     })
     cohortByCity.forEach(cohort => {
         const options = document.getElementById('select')
         options.innerHTML +=
-            `<option>${cohort.id}</option>`
+            `<option id='${cohort.id}'>${cohort.id}</option>`
     });
 };
 
