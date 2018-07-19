@@ -1,23 +1,40 @@
 window.computeUsersStats = (users, progress, courses) => {
-
-};
-window.sortUsers = (users, orderBy, orderDirection) => {
-
-}
-window.filterUsers = (users, search) => {
-    let student = users.filter(user => {
-        const getName = user.stats.name;
-        return getName.toUpperCase().indexOf(search.toUpperCase()) != -1;
-    });
-    return student;
-}
-window.processCohortData = (options) => {
-    let students = computeUsersStats(options.cohortData.users, options.cohortData.progress, 'intro');
-    students = sortUsers(students, options.orderBy, options.orderDirection);
-    if (options.search != '') {
-        students = filterUsers(students, options.search);
-    } else {
-        students = sortUsers(students, options.orderBy, options.orderDirection);
+    const usersWithStats = [];
+    const stats = {
+        percent: null,
+        exercises: {
+            total: null,
+            completed: null,
+            percent: null,
+        },
+        reads: {
+            total: null,
+            completed: null,
+            percent: null,
+        },
+        quizzes: {
+            total: null,
+            completed: null,
+            percent: null,
+            scoreSum: null,
+            scoreAvg: null,
+        }
     }
-    return students;
-}
+    console.log(courses)
+    console.log(users)
+    console.log(progress)
+};
+
+window.sortUsers = (users, orderBy, orderDirection) => {
+};
+window.filterUsers = (users, search) => {
+};
+window.processCohortData = (options) => {
+  sortUsers();
+  filterUsers();
+  const index = options.cohort.map((course)=>{
+    const indexArray = course.coursesIndex && Object.keys(course.coursesIndex).toString()
+    return indexArray
+    })
+    computeUsersStats(options.cohortData.users,options.cohortData.progress,noDuplicate(index));
+};
