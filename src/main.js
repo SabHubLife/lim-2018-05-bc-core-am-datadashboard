@@ -27,7 +27,7 @@ const getData = (str, url, callback) => {
   });
   xhr.send();
 };
-
+ 
 const showProgress = (prog, dataProg) => {
   optionObj.cohortData.progress = dataProg;
   processCohortData(optionObj);
@@ -35,10 +35,6 @@ const showProgress = (prog, dataProg) => {
 
 const showUsers = (user, dataUsers) => {
   optionObj.cohortData.users = dataUsers;
-  /* mainSection.innerHTML = '';
-  dataUsers.forEach(userData=>{
-  mainSection.innerHTML+=`<div class='col-md-4'><div>${userData.name}</div><div id='${userData.id}'></div></div>`
-  }); */
   getData(user, '../data/cohorts/lim-2018-03-pre-core-pw/progress.json', showProgress);
 };
 
@@ -70,4 +66,21 @@ const noDuplicate = (arr) => {
   });
 };
 
+const print=(processedUsers, processedData)=>{
+  mainSection.innerHTML = ``;
+  processedUsers.forEach(userData=>{
+  mainSection.innerHTML+=`
 
+  <div class="col-md-12">
+  <div id ="topTable" class="row" style ="background: rgb(0, 0, 0);">
+  <div class="col-md-2">Nombre <div class="col-md-2">${userData.name}</div></div>
+  <div class="col-md-2">% de Completitud General<div class="col-md-2">col3</div></div>
+  <div class="col-md-2">Lecturas<div class="col-md-2">col4</div></div>
+  <div class="col-md-2">Ejercicios<div class="col-md-2">col5</div></div>
+  <div class="col-md-2">Quizzes<div class="col-md-2">col6</div></div>
+  </div> 
+</div>
+
+`
+  });
+};
