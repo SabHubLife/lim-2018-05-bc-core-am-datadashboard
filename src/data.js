@@ -20,21 +20,25 @@ window.computeUsersStats = (users, progress, courses) => {
             scoreAvg: null,
         }
     }
-    console.log(courses)
-    console.log(users)
-    console.log(progress)
+    console.log()
+    users.forEach(indUser => {
+        Object.keys(progress).forEach(indProg => {
+            if (indUser.id === indProg) {
+                console.log(indProg)
+            }
+        })
+    });
+
 };
 
-window.sortUsers = (users, orderBy, orderDirection) => {
-};
-window.filterUsers = (users, search) => {
-};
+window.sortUsers = (users, orderBy, orderDirection) => {};
+window.filterUsers = (users, search) => {};
 window.processCohortData = (options) => {
-  sortUsers();
-  filterUsers();
-  const index = options.cohort.map((course)=>{
-    const indexArray = course.coursesIndex && Object.keys(course.coursesIndex).toString()
-    return indexArray
+    sortUsers();
+    filterUsers();
+    const index = options.cohort.map((course) => {
+        const indexArray = course.coursesIndex && Object.keys(course.coursesIndex).toString()
+        return indexArray
     })
-    computeUsersStats(options.cohortData.users,options.cohortData.progress,noDuplicate(index));
+    computeUsersStats(options.cohortData.users, options.cohortData.progress, noDuplicate(index));
 };
